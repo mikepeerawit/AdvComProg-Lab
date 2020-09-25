@@ -11,7 +11,7 @@ Original file is located at
 
 pip install pymongo[srv]
 
-client = pymongo.MongoClient("mongodb+srv://usertest:mike12345@cluster0.ob578.mongodb.net/test?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://usertest:<password>@cluster0.ob578.mongodb.net/<dbname>?retryWrites=true&w=majority")
 db = client.student_scores
 
 import pymongo
