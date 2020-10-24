@@ -32,7 +32,7 @@ def home():
 
 @app.route('/insertscore')
 def insertscore():
-  client=MongoClient("mongodb+srv://usertest:usertest@cluster0.ob578.mongodb.net/retryWrites=true&w=majority")
+  client=MongoClient("mongodb+srv://usertest:<password>@cluster0.ob578.mongodb.net/<db-name>retryWrites=true&w=majority")
   db=client.all_score
   for value in all_scores:
     db.score.insert_one(value)
@@ -66,7 +66,7 @@ def home():
 
 @app.route('/insertscore')
 def insertscore():
-  client=MongoClient("mongodb+srv://usertest:usertest@cluster0.ob578.mongodb.net/retryWrites=true&w=majority")
+  client=MongoClient("mongodb+srv://usertest:<password>@cluster0.ob578.mongodb.net/<db-name>retryWrites=true&w=majority")
   db=client.all_score
   for value in all_scores:
     db.score.insert_one(value)
