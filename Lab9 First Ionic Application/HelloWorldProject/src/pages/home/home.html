@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Image Url
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Url</ion-label>
+    <ion-input placeholder="Enter Image Address" [(ngModel)]="imageVal"></ion-input>
+  </ion-item>
+  <button ion-button full clear (click)="buttonClick()">SET IMAGE</button>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Change Image</ion-card-title>
+    </ion-card-header>
+    <img src="{{cardImageVal}}">
+    <ion-card-content>
+      This is the image for this image address.
+    </ion-card-content>
+  </ion-card>
+</ion-content>
