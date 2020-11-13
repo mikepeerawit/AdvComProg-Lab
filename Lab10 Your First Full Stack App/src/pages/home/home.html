@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Get Score
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-item>
+  <ion-label position="stacked">ID</ion-label>
+  <ion-input placeholder="Enter your id" [(ngModel)]="student_id"></ion-input> 
+</ion-item>
+<button ion-button (click)="showTemp(student_id)" full>Enter your id</button>
+  <div *ngIf='temp$ | async as tmp'>
+    <h1>{{tmp.data.id}}</h1>
+    <ion-card>
+      <h3><b>Q1:</b> {{tmp.data.quiz1}}</h3>
+      <h3><b>Q2:</b> {{tmp.data.quiz2}}</h3>
+      <h3><b>Q3:</b> {{tmp.data.quiz3}}</h3>
+      <h3><b>Q4:</b> {{tmp.data.quiz4}}</h3>
+      <h3><b>Q5:</b> {{tmp.data.quiz5}}</h3>
+      <h3><b>Total:</b> {{tmp.data.sum}}</h3>
+    </ion-card>
+  </div>
+</ion-content>
