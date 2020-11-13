@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Infinite Scroll
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of itemListData">
+      <p><b>ID:</b> {{item.id}}</p>
+      <p><b>Quiz 1:</b> {{item.quiz1}}</p>
+      <p><b>Quiz 2:</b> {{item.quiz2}}</p>
+      <p><b>Quiz 3:</b> {{item.quiz3}}</p>
+      <p><b>Quiz 4:</b> {{item.quiz4}}</p>
+      <p><b>Quiz 5:</b> {{item.quiz5}}</p>
+      <p><b>Total:</b> {{item.sum}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
