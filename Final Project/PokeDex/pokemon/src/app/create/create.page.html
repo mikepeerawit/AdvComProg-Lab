@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Name</b></ion-label>
+    <ion-input type="text" required="true" [(ngModel)] = "name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Type 1</b></ion-label>
+    <ion-input type="text" required="true" [(ngModel)] = "type_1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Type 2</b></ion-label>
+    <ion-input type="text" required="true" [(ngModel)] = "type_2"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Weight</b></ion-label>
+    <ion-input type="tel" maxlength="3" required="true" [(ngModel)] = "weight"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Hp</b></ion-label>
+    <ion-input type="tel" maxlength="3" required="true" [(ngModel)] = "hp"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Attack</b></ion-label>
+    <ion-input type="tel" maxlength="3" required="true" [(ngModel)] = "attack"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Defense</b></ion-label>
+    <ion-input type="tel" maxlength="3" required="true" [(ngModel)] = "defense"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Special-Attack</b></ion-label>
+    <ion-input type="tel" maxlength="3" required="true" [(ngModel)] = "special_attack"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Special-Defense</b></ion-label>
+    <ion-input type="tel" maxlength="3" required="true" [(ngModel)] = "special_defense"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" position="stacked" style="font-size:20px"><b>Speed</b></ion-label>
+    <ion-input type="tel" maxlength="3" requird="true" [(ngModel)] = "speed"></ion-input>
+  </ion-item>
+  <ion-button type="submit" expand="full" color="danger" href="/tabs/tab2" (click) = "addPokemon(name,type_1,type_2,weight,hp,attack,defense,special_attack,special_defense,speed)">Create Pokemon</ion-button>
+
+
+
+
+</ion-content>

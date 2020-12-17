@@ -1,0 +1,330 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>
+      Stats
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment style="background-color: #FFFFFF" color="dark" scrollable value="segment1" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="segment1">
+      PokeDex info
+    </ion-segment-button>
+    <ion-segment-button value="segment2">
+      Your info
+    </ion-segment-button>
+    <ion-segment-button value="segment3">
+      Top Attack
+    </ion-segment-button>
+    <ion-segment-button value="segment4">
+      Your Top Attack
+    </ion-segment-button>
+    <ion-segment-button value="segment5">
+      Top Defense
+    </ion-segment-button>
+    <ion-segment-button value="segment6">
+      Your Top Defense
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="segment1">
+    <ion-card-content style="padding-bottom:30px">
+    <h1>PokeDex</h1>
+      <ion-list lines="full" *ngIf="datastats">
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Count:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.count }}
+          </ion-label>
+        </ion-item>
+        <h2>Weight(lbs)</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.weight.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.weight.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.weight.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Attack</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.attack.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.attack.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.attack.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Defense</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.defense.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.defense.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.defense.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Special-Attack</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.special_attack.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.special_attack.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.special_attack.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Special-Defense</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.special_defense.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.special_defense.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.special_defense.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Speed</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.speed.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.speed.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ datastats.speed.min }}  
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </div>
+  <div *ngIf="segment2">
+    <ion-card-content style="padding-bottom:60px">
+    <h1>Your Pokemon</h1>
+      <ion-list lines="full" *ngIf="yourdatastats">
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Count:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.count }}
+          </ion-label>
+        </ion-item>
+        <h2>Weight(lbs)</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.weight.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.weight.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.weight.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Attack</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.attack.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.attack.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.attack.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Defense</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.defense.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.defense.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.defense.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Special-Attack</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.special_attack.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.special_attack.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.special_attack.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Special-Defense</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.special_defense.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.special_defense.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.special_defense.min }}  
+          </ion-label>
+        </ion-item>
+        <h2>Speed</h2>
+        <ion-item  class="ion-text-capitalize">
+          <ion-label style="font-size: 12px;" slot="start"><b>Average:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.speed.average }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Max:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.speed.max }}  
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label style="font-size: 12px;" slot="start"><b>Min:</b></ion-label>
+          <ion-label style="font-size: 12px;" slot="end">
+            {{ yourdatastats.speed.min }}  
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </div>
+  <div *ngIf="segment3">
+    <h1>Top 25 Attack</h1>
+    <ion-list>
+      <ion-item *ngFor="let item of datatopattack;">
+        <ion-label class="ion-text-capitalize">
+          <h2>{{ item.pokemon }}</h2>
+          <p>Attack: {{ item.attack }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="segment4">
+    <h1>Your Top 25 Attack</h1>
+    <ion-list>
+      <ion-item *ngFor="let item of datayourattack;">
+        <ion-label class="ion-text-capitalize">
+          <h2>{{ item.name }}</h2>
+          <p>Attack: {{ item.attack }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="segment5">
+    <h1>Top 25 Defense</h1>
+    <ion-list>
+      <ion-item *ngFor="let item of datatopdefense;">
+        <ion-label class="ion-text-capitalize">
+          <h2>{{ item.pokemon }}</h2>
+          <p>Defense: {{ item.defense }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="segment6">
+    <h1>Your Top 25 Defense</h1>
+    <ion-list>
+      <ion-item *ngFor="let item of datayourdefense;">
+        <ion-label class="ion-text-capitalize">
+          <h2>{{ item.name }}</h2>
+          <p>Defense: {{ item.defense }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
